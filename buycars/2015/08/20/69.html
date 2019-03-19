@@ -1,0 +1,563 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>阿尔法·罗密欧 166 2003 款 166 3.0-二手车网</title>
+		<meta content="二手车网" name="keywords" />
+		<meta content="江阴二手车网" name="description" />
+		<link href="/templates/default/default/css/car.css" rel="stylesheet" type="text/css"/>
+		<script type="text/javascript" src="/static/js/jquery.js"></script>
+		<script type="text/javascript" src="/static/js/layer/layer.min.js"></script>
+		<script type="text/javascript" src="/static/js/laydate/laydate.js"></script>
+		<script type="text/javascript" src="/static/js/jquery.SuperSlide.2.1.js"></script>
+		<script type="text/javascript" src="/static/js/Validform_v5.3.2_min.js"></script>
+		<script type="text/javascript" src="/templates/default/default/js/jquery.SuperSlide.2.1.js"></script>
+		<script language="JavaScript">
+			$(function() {
+				//品牌选择
+				$("#brand").change(function(){
+					$.get("/index.php?mod=ajax&ajax=1", { 
+						pid :  $("#brand").val() 
+					}, function (data, textStatus){
+						   $("#subbrand").html(data); // 把返回的数据添加到页面上
+						}
+					);
+				});
+				$("div.car_tab ul li a").mouseover(function() {
+					$(this).addClass("here").parent().siblings().children().removeClass("here");
+					var index = $div_li.index(this);
+					$("div.cartab_box > div").eq(index).show().siblings().hide();
+				});
+				$("#hits").load("/index.php?m=ajax&ajax=1&carshit=1&id=69");
+				$(".emcity").toggle(
+				  function () {
+					$(".emission_city").show();
+				  },
+				  function () {
+					$(".emission_city").hide();
+				  }
+				);
+				//表单验证
+				$(".yuyueform").Validform({
+					tiptype:3
+				});
+
+				$('#yuyue').on('click', function(){
+					var yuyueindex =  $.layer({
+						type: 1,
+						title: '预约看车',
+						shade: [0.5, '#000'],
+						area: ['460px', 'auto'],
+						page: {dom: '#A1'}
+					});
+					$('#btnYuyueLookCar').on('click', function(){
+						$.post("/index.php?m=ajax&ajax=1&yuyue=1",{
+							pid: 69, 
+							uid: 182, 
+							name: $("#A1 input[name='name']").val(), 
+							mobilephone: $("#A1 input[name='mobilephone']").val(),
+							ordertime: $("#A1 input[name='ordertime']").val(),
+							orderinfo:$("#A1 textarea[name='orderinfo']").val()
+						},function(data){
+							if (data==1)
+							{
+								layer.close(yuyueindex);
+								layer.alert("预约成功！请耐心等待商家和您联系！", 9);
+								$('#yuyueform')[0].reset();
+							}
+							else{
+								layer.close(yuyueindex);
+								layer.alert("预约失败！请再次预约！", 9);
+							}
+						});
+					});
+				});
+				$('#xunjia').on('click', function(){
+					 var xunjiaindex = $.layer({
+						type: 1,
+						title: '咨询底价',
+						shade: [0.5, '#000'],
+						area: ['460px', 'auto'],
+						page: {dom: '#B1'}
+					});
+					$('#btnxuejia').on('click', function(){
+						$.post("/index.php?m=ajax&ajax=1&xunjia=1",{
+							pid: 69, 
+							uid: 182, 
+							name: $("#B1 input[name='name']").val(), 
+							mobilephone: $("#B1 input[name='mobilephone']").val(),
+						},function(data){
+							if (data==1)
+							{
+								layer.close(xunjiaindex);
+								layer.alert("询价成功！请耐心等待商家和您联系！", 9);
+								$('#xunjiaform')[0].reset();
+							}
+							else{
+								layer.close(xunjiaindex);
+								layer.alert("询价失败！请再次询价！", 9);
+							}
+						});
+					});
+				});	
+				
+			})
+		</script>
+		</head>
+	<body>
+<!--内容--> 
+
+<script type="text/javascript" src="/static/js/jquery.inputtext.js"></script>
+<script language="JavaScript">
+$(function(){
+	$("#carcount").load("/index.php?m=ajax&ajax=1&carcount=1");
+	$(".keywords").textRemindAuto();
+		//城市选择
+	$(".topcity").toggle(
+	  function () {
+		$(".topcitylist").show();
+	  },
+	  function () {
+		$(".topcitylist").hide();
+	  }
+	);
+	})
+</script>
+
+<!--头部-->
+
+<script language="JavaScript">
+$(function(){
+	$("#login").load("/index.php?m=ajax&ajax=1&login=1");
+})
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+<div class="top">
+	<div class="top_main clearfix">
+		<div class="top_left">
+			欢迎来到二手车网！<span id="login"></span>		</div>
+		<div class="top_right">
+			<a href="/m/">手机端</a>&nbsp;&nbsp;|&nbsp;&nbsp;客服热线：<span class="orange01 fb">400-0000-000</span>
+		</div>
+	</div>
+</div><div class="headw">
+	<div class="head">
+		<div class="logo"><a href="/"><img src="/upload/image/20150819/20150819210318_19137.jpg" alt="二手车网"></a></div>
+		 	<div class="topcity">
+				<div class="topcitybox"><i></i><script src="/index.php?m=city"></script></div></div>
+			<div class="topcitylist hide">
+			<h3>热门城市</h3>
+			<ul class="clearfix">
+				<li><a href="/index.php?m=city&cid=0">全国</a></li>
+								<li><a href="/index.php?m=city&cid=37">北京市</a></li>
+								<li><a href="/index.php?m=city&cid=122">南京市</a></li>
+								<li><a href="/index.php?m=city&cid=100">长春市</a></li>
+								<li><a href="/index.php?m=city&cid=86">沈阳市</a></li>
+								<li><a href="/index.php?m=city&cid=63">台北市</a></li>
+								<li><a href="/index.php?m=city&cid=52">太原市</a></li>
+								<li><a href="/index.php?m=city&cid=41">石家庄市</a></li>
+								<li><a href="/index.php?m=city&cid=40">重庆市</a></li>
+								<li><a href="/index.php?m=city&cid=39">上海市</a></li>
+								<li><a href="/index.php?m=city&cid=38">天津市</a></li>
+								<li><a href="/index.php?m=city&cid=284">成都市</a></li>
+							</ul>
+			<p class="tr"><a href="/index.php?m=citylist" class="orange01">更多城市</a></p>
+			</div>
+					<div class="topsearch">
+			<div class="topsearchbox">
+			<form method="get" action="/index.php">
+				<input type="text" name="k" class="keywords" value="请输入车辆关键词或信息编号，如：别克 或 别克 君威"><input type="submit" value="" class="button"/>
+				<input type="hidden" name="m" value="search">
+			</form>
+			</div>
+			<p class="topkeywords"><a href="/index.php?m=search&k=%E5%AE%9D%E9%A9%AC">宝马</a>&nbsp;&nbsp;<a href="/index.php?m=search&k=%E5%A5%94%E9%A9%B0">奔驰</a>&nbsp;&nbsp;<a href="/index.php?m=search&k=%E5%A4%A7%E4%BC%97">大众</a>&nbsp;&nbsp;<a href="/index.php?m=search&k=%E5%88%AB%E5%85%8B">别克</a>&nbsp;&nbsp;<a href="/index.php?m=search&k=%E9%9B%AA%E5%BC%97%E5%85%B0">雪弗兰</a>&nbsp;&nbsp;<a href="/index.php?m=search&k=%E5%B9%BF%E5%B7%9E%E6%9C%AC%E7%94%B0">广州本田</a>&nbsp;&nbsp;<a href="/index.php?m=search&k=%E4%B8%9C%E9%A3%8E%E6%9C%AC%E7%94%B0">东风本田</a>&nbsp;&nbsp;<a href="/index.php?m=search&k=%E4%B8%B0%E7%94%B0">丰田</a>&nbsp;&nbsp;<a href="/index.php?m=search&k=%E8%B5%B7%E4%BA%9A">起亚</a>&nbsp;&nbsp;</p>
+		</div>
+		<div class="carnum" id="carcount">
+		</div>
+	</div>
+</div>
+<div class="nav_list">
+	<ul class="clearfix">
+				<li>
+		<a href="/index.php" title="首页"  >首页</a>
+		</li>
+				<li>
+		<a href="/index.php?m=search" title="我要买车"  >我要买车</a>
+		</li>
+				<li>
+		<a href="index.php?m=user&a=addcar" title="我要卖车"  target="_blank">我要卖车</a>
+		</li>
+				<li>
+		<a href="/index.php?m=assesscar" title="车价评估"  >车价评估</a>
+		</li>
+				<li>
+		<a href="/index.php?m=qiugou" title="求购信息"  >求购信息</a>
+		</li>
+				<li>
+		<a href="/index.php?m=insurance" title="汽车保险"  >汽车保险</a>
+		</li>
+				<li>
+		<a href="/index.php?m=market" title="周末集市"  >周末集市</a>
+		</li>
+				<li>
+		<a href="/index.php?m=issell&c=s_2" title="成交车辆"  >成交车辆</a>
+		</li>
+				<li>
+		<a href="/index.php?m=rentcar" title="我要租车"  >我要租车</a>
+		</li>
+				<li style="float:right;"><a href="/index.php?m=dealer" class="here" style="background:#53a3e8;width:130px;vertical-align:top;"><img src="/templates/default/default/img/dealer.png"/>认证商家</a></li>
+	</ul>
+</div>
+<!--头部end --><div class="nav">您当前的位置：<a href="/">首页</a> <span>></span> <a href="/index.php?m=search">买车</a> <span>></span> 阿尔法·罗密欧 166 2003 款 166 3.0</div>
+<div class="main mt10">
+	<div class="carbox clearfix">
+		<div class="carbox_left">
+			<div class="carpicbox">
+												<img src="/static/img/bigcar.jpg"/>
+							</div>
+					</div>
+		<div class="carbox_center">
+		<ul class="clearfix">
+			       </ul>
+			<h1 class="carname">阿尔法·罗密欧 166 2003 款 166 3.0</h1>
+			<p class="gray01" style="line-height:28px;"><span>发布日期：2015-08-20<span class="pl10">浏览量：<span class="orange01" id="hits"></span>
+			<span class="bdsharebuttonbox" style="float:right;"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a></span>
+			</p>
+			<div class="pricebox clearfix">
+				<div class="mt20">预售价格：<span class="price">￥11.00万</span>
+																	</div>
+				<div>出厂报价：<span class="fb white">0.00</span>万  + <span class="fb white">0.00</span>万(购置税) 您节省了<span class="fb white">0.00</span>万</div>
+			</div>
+			<div class="para">
+				<ul class="clearfix">
+                    <li>
+                        <dl>
+                             <dt><span class="img1"></span></dt>
+                             <dd>表显里程<strong>11.00万公里</strong></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                             <dt><span class="img2"></span></dt>
+                             <dd>上牌时间<strong>2005年0月</strong></dd>
+                        </dl>
+                    </li>
+                    <li class="last">
+                        <dl>
+							<dt><span class="img3"></span></dt>
+                            <dd>排放标准<strong></strong>
+							</dd>
+						</dl>
+                    </li>
+				</ul>
+            </div>
+			<div class="contactbox" id="tel">
+								<h3>免费咨询电话（8:30-17:00 周六日休息）</h3>
+				<div class="box">
+				    信息编号: <em>1440037434</em><br/>
+					<p class="tel"><!--4000-400-400-->18040654788</p>
+				</div>
+							</div>
+			<div class="ensure"><!--保障服务-->
+                <label>保障服务</label>
+                <i class="i-yb"></i>延长质保&nbsp;&nbsp;&nbsp;<i class="i-ckb"></i>代办服务&nbsp;&nbsp;&nbsp;<i class="i-dk"></i>分期购车
+			</div>
+		</div>
+		<div class="carbox_right">
+						<h3>推荐车源</h3>
+			<div>
+				<ul class="carlist clearfix">
+									</ul>
+			</div>
+					</div>
+	</div>
+</div>
+<div class="notice mt20">
+	<span class="fr">客服电话：<span class="orange01">400-0000-000</span></span>二手车交易车辆过户前请勿轻易给对方押金、订金，交易中请仔细查验车况，避免上当受骗。
+</div>
+<div class="main mt20 clearfix">
+	<div class="main_left">
+		<ul class="cardetail_tab clearfix">
+			<li class="here"><a href="#A">车源详情</a></li>
+			<!--<li><a href="#B">车主描述</a></li>
+			<li><a href="#D">大图展示</a></li>-->
+		</ul>
+		<div class="cardetailbox">
+			<h4 class="mt10"><span class="title">基本信息</span></h4>
+			<div class="box">
+				<ul class="cardetaillist clearfix">
+					<li><span>车型：</span>小型车</li>
+					<li><span>上牌日期：</span>2005年0月</li>					
+					<li><span>行驶里程：</span>11.00万公里</li>
+					<li><span>颜色：</span>红色</li>
+					<li><span>变速箱：</span>无</li>
+					<li><span>排量：</span>1.3L</li>	
+				</ul>
+				<ul class="cardetaillist clearfix">
+																	<li><span class="gray">交强险到期时间：</span>0</li>
+																								<li><span class="gray">年检有效期至：</span></li>
+																								<li><span class="gray">4S店定期保养：</span></li>
+																								<li><span class="gray">车辆用途：</span></li>
+																		<span class="icon_gp"></span>
+																		<span class="icon_gp"></span>
+																		<span class="icon_gp"></span>
+																		<span class="icon_gp"></span>
+																		<span class="icon_gp"></span>
+																		<span class="icon_gp"></span>
+																		<span class="icon_gp"></span>
+																		<span class="icon_gp"></span>
+																		<span class="icon_gp"></span>
+																		<span class="icon_gp"></span>
+																		<span class="icon_gp"></span>
+																		<span class="icon_gp"></span>
+																		<span class="icon_gp"></span>
+																		<span class="icon_gp"></span>
+																		<span class="icon_gp"></span>
+																		<span class="icon_gp"></span>
+																		<span class="icon_gp"></span>
+																		<span class="icon_gp"></span>
+																		<span class="icon_gp"></span>
+																		<span class="icon_gp"></span>
+																		<span class="icon_gp"></span>
+																		<span class="icon_gp"></span>
+																		<span class="icon_gp"></span>
+																		<span class="icon_gp"></span>
+																		<span class="icon_gp"></span>
+																		<span class="icon_gp"></span>
+																		<span class="icon_gp"></span>
+																		<span class="icon_gp"></span>
+																</ul>
+			</div>
+			<h4><span class="title">车主描述</span></h4>
+			<div class="box">
+				
+			</div>
+			<h4><span class="title">大图展示</span></h4>
+					</div>
+	</div>
+	<div class="main_right">
+		<a href="#" target="_blank">
+			<script language="javascript" src="/index.php?m=ad&id=56"></script>
+			<script language="JavaScript">
+$(function() {
+	//热门车源
+	$("#hotcar").load("/index.php?m=ajax&ajax=1&cartype=hot");
+})
+</script>
+<div class="commonbox02">
+	<h3>热门车源</h3>
+	<div class="box">
+		<div id="hotcar"></div>
+	</div>
+</div>		</a>
+	</div>	
+</div>
+<div class="main">
+	<div class="othercarbox mt15">
+		<ul class="cardetail_tab clearfix">
+			<li class="here">同车系其他车源</li>
+		</ul>
+		<div class="box mt15">
+			<ul class="carlist clearfix">
+							</ul>
+		</div>
+	</div>
+</div>
+<div class="main">
+	<div class="othercarbox mt15">
+		<ul class="cardetail_tab clearfix">
+			<li class="here">同价位其他车源</li>
+		</ul>
+		<div class="box mt15">
+			<ul class="carlist clearfix">
+							</ul>
+		</div>
+	</div>
+</div>
+<div id="A1" class="hide">
+	<div class="popnotice">
+		阿尔法·罗密欧 166 2003 款 166 3.0，售价￥11.00万，2005年上牌，行驶11.00万公里
+	</div>
+	<div class="p20">
+	<form method="post" name="yuyueform" id="yuyueform" class="yuyueform">
+		<table class="poptable">
+		<tr>
+			<th><span class="red">*</span> 姓名：</th>
+			<td><input type="text" name="name" datatype="s" nullmsg="请填写姓名！"></td>
+		</tr>
+		<tr>
+			<th><span class="red">*</span> 手机号：</th>
+			<td><input type="text" name="mobilephone" datatype="m" nullmsg="请填写手机号！"></td>
+		</tr>
+		<tr>
+			<th><span class="red">*</span> 预约时间：</th>
+			<td><input type="text" class="laydate-icon" name="ordertime" datatype="*" nullmsg="请选择预约时间！" onclick="laydate()"></td>
+		</tr>
+		<tr>
+			<th><span class="red">*</span> 留言：</th>
+			<td><textarea name="orderinfo" rows="5" cols="25" datatype="*" nullmsg="请填写留言！"></textarea></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="gray">您的信息不会在网站上显示，我们将保证您的隐私安全。</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td><span class="button1 h35-p25 mr5"><a id="btnYuyueLookCar" href="javascript:;">提&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;交</a></span></td>
+		</tr>
+		</table>
+	</form>
+	</div>
+</div>
+<div id="B1" class="hide">
+	<div class="popnotice">
+		阿尔法·罗密欧 166 2003 款 166 3.0，售价￥11.00万，2005年上牌，行驶11.00万公里
+	</div>
+	<div class="p20">
+		<form method="post" name="xunjiaform" id="xunjiaform" class="xunjiaform">
+		<table class="poptable">
+		<tr>
+			<th><span class="red">*</span> 姓名：</th>
+			<td><input type="text" name="name" datatype="s" nullmsg="请填写姓名！"></td>
+		</tr>
+		<tr>
+			<th><span class="red">*</span> 手机号：</th>
+			<td><input type="text" name="mobilephone" datatype="m" nullmsg="请填写手机号！"></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="gray">您的信息不会在网站上显示，我们将保证您的隐私安全。</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td><span class="button1 h35-p25 mr5"><a id="btnxuejia" href="javascript:;">提&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;交</a></span></td>
+		</tr>
+		</table>
+		</form>
+	</div>
+</div>
+
+<script type="text/javascript" src="/static/js/layer/layer.min.js"></script>
+<script language="JavaScript">
+$(function() {
+	$('#feedback').on('click', function(){
+		var feedbackindex =  $.layer({
+			type: 1,
+			title: '意见反馈',
+			shade: [0.5, '#000'],
+			area: ['440px', 'auto'],
+			page: {dom: '#A1'}
+		});
+	
+		$('#btnfeedback').on('click', function(){
+			$.post("/index.php?m=ajax&ajax=1&feedback=1",{
+				f_tel: $("#A1 input[name='f_tel']").val(),
+				f_detail:$("#A1 textarea[name='f_detail']").val()
+				},function(data){
+					if (data==1)
+					{
+						layer.close(feedbackindex);
+						layer.alert("您的反馈信息已成功提交！", 9);
+						$('#feedbackform')[0].reset();
+					}
+					else{
+						layer.close(feedbackindex);
+						layer.alert("提交失败！请再次提交！", 9);
+					}
+				});
+		});
+	});
+});
+</script>
+<!--底部导航-->
+<div class="footer" id="foot">
+	<div class="footbox">
+      <div class="footleft">
+		<p class="foottop">
+						<a href="/index.php" title="首页" class="whiteA f14 pl10 pr10">首页</a> | 
+						<a href="/index.php?m=search" title="我要买车" class="whiteA f14 pl10 pr10">我要买车</a> | 
+						<a href="/index.php?m=user&a=addcar" title="我要卖车" class="whiteA f14 pl10 pr10">我要卖车</a> | 
+						<a href="/index.php?m=assesscar" title="车价评估" class="whiteA f14 pl10 pr10">车价评估</a> | 
+						<a href="/index.php?m=qiugou" title="求购信息" class="whiteA f14 pl10 pr10">求购信息</a> | 
+						<a href="/index.php?m=insurance" title="汽车保险" class="whiteA f14 pl10 pr10">汽车保险</a> | 
+						<a href="/index.php?m=market" title="周末集市" class="whiteA f14 pl10 pr10">周末集市</a> | 
+						<a href="/index.php?m=issell&c=s_2" title="成交车辆" class="whiteA f14 pl10 pr10">成交车辆</a> | 
+						<a href="/index.php?m=rentcar" title="我要租车" class="whiteA f14 pl10 pr10">我要租车</a> | 
+					</p>
+		<p class="mt10 pl10"> 二手车网&nbsp;&nbsp;&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank" style="color:#9c9c9c">京ICP1234567</a>&nbsp;&nbsp;&nbsp;咨询电话：<span class="orange01 fb">400-0000-000</span></p>
+		<p class="mt10 pl10"> Copyright  2014-2015 江阴二手车网 版权所有.  &nbsp;&nbsp;&nbsp;地址：湖北省二手车网 </p>
+      </div>
+      <ul class="footright">
+      	<!--<li>
+        	<img src="" width="100" height="100" />
+        </li>
+        <li>
+        	<p class="footright_p1">江阴二手汽车手机版</p>
+            <p class="footright_p2">海量车源 随时掌握</p>
+        </li>-->
+        <li>
+        	<img src="/templates/default/default/image/weixin.jpg" width="100" height="100" />
+        </li>
+        <li>
+        	<p class="footright_p1">二手车网官方微信</p>
+            <p class="footright_p2">扫描二维码，即可进行互动，还有惊爆优惠等你来拿！</p>
+        </li>
+      </ul>
+	</div>
+	<div id="right-side" class="right-side">
+		<ul>
+		<li class="side-top w4"><a id="backtop" title="返回顶部" href="#top" style="display: block;">返回顶部</a></li>
+	  </ul>
+	</div>
+</div>
+<div id="A1" class="hide">
+	<div class="popnotice">
+		请填写您的反馈内容和联系电话
+	</div>
+	<div class="p20">
+	<form method="post" name="yuyueform" id="yuyueform" class="yuyueform">
+		<table class="poptable">
+		<tr> 
+			<th><span class="red">*</span> 反馈内容：</th>
+			<td><textarea name="f_detail" rows="5" cols="35" datatype="*" nullmsg="请填写留言！"></textarea></td>
+		</tr>
+		<tr>
+			<th><span class="red">*</span> 手机号：</th>
+			<td><input type="text" name="f_tel" datatype="m" nullmsg="请填写手机号！"></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="gray">您的信息不会在网站上显示，我们将保证您的隐私安全。</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td><span class="button_orange h35-p25 mr5"><a id="btnfeedback" href="javascript:;">提交</a></span></td>
+		</tr>
+		</table>
+	</form>
+	</div>
+</div>
+<script type="text/javascript" src="/templates/default/default/js/lanrenzhijia.js"></script>
+<div id="floatTools" class="lanrenzhijia-cs">
+  <div class="floatL"> <a style="display: block" id="aFloatTools_Show" class="btnOpen" title="查看在线客服" onClick="javascript:$('#divFloatToolsView').animate({width: 'show', opacity: 'show'}, 'normal',function(){ $('#divFloatToolsView').show();kf_setCookie('RightFloatShown', 0, '', '/', 'www.lanrenzhijia.com'); });$('#aFloatTools_Show').attr('style','display:none');$('#aFloatTools_Hide').attr('style','display:block');" href="javascript:void(0);"> 展开</a> <a style="display: none" id="aFloatTools_Hide" class="btnCtn" title="关闭在线客服" onClick="javascript:$('#divFloatToolsView').animate({width: 'hide', opacity: 'hide'}, 'normal',function(){ $('#divFloatToolsView').hide();kf_setCookie('RightFloatShown', 1, '', '/', 'www.lanrenzhijia.com'); });$('#aFloatTools_Show').attr('style','display:block');$('#aFloatTools_Hide').attr('style','display:none');" href="javascript:void(0);"> 收缩</a> </div>
+  <div id="divFloatToolsView" class="floatR display: none">
+    <div class="cn">
+      <h3 class="titZx">车辆买卖</h3>
+      <ul>
+        <li><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=485368&site=qq&menu=yes"> <img border="0" src="http://wpa.qq.com/pa?p=2:485368:51" alt="车辆买卖" title="车辆买卖" /></a> </li>
+        </li>
+      </ul>
+      <h3>上牌过户</h3>
+      <ul>
+        <li><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=485368&site=qq&menu=yes"> <img border="0" src="http://wpa.qq.com/pa?p=2:485368:51" alt="上牌过户" title="上牌过户" /></a></li>
+      </ul>
+      <h3>评估专家</h3>
+      <ul>
+        <li><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=485368&site=qq&menu=yes"> <img border="0" src="http://wpa.qq.com/pa?p=2:485368:51" alt="评估专家" title="评估专家" /></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- 版权 结束 --></body>
+</html>
+

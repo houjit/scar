@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>汽车资讯 - <{$setting.title}></title>
+    <meta content="<{$setting.keywords}>" name="keywords" />
+    <meta content="<{$setting.description}>" name="description" />
+    <link href="<{$weburl}>/static/default/css/style.css" type="text/css" rel="stylesheet" />
+    <link href="<{$weburl}>/static/default/css/show.css" type="text/css" rel="stylesheet" />
+    <script src="<{$weburl}>/static/default/js/jquery-1.8.3.min.js"></script>
+    <script src="<{$weburl}>/static/default/js/index.js"></script>
+</head>
+
+<body>
+
+<!--HEAD-->
+<{include file="default/`$setting.templates`/head.html"}>
+
+<!--CLASS-->
+<div class="center" style="position:relative; z-index:999;">
+	<div class="list" style="display:none; top:0px;">
+        <{include file="default/`$setting.templates`/class.html"}>
+    </div>
+</div>
+
+<!--position-->
+<div class="zy_tit center">您当前位置：<a href="<{$weburl}>/">首页</a><span>></span>新闻资讯</div>
+
+<!--xinwenxizun begin-->
+<div class="xinwenxizun center">
+	<div class="box-left-tit"><h2>首页推荐</h2></div>
+    <!--banner begin-->
+<div id="slide" class="fl">
+	<div class="ul img_span">
+		<ul>
+        <{foreach from=$newslist.banner item=news}>
+            <li>
+                <a href="<{$news.n_url}>" target="_blank"><img src="<{$news.n_pic}>" style="width:455px;height:250px;" /></a>
+            </li>
+        <{/foreach}>
+		</ul>
+	</div>
+	<div class="ul bar">
+		<ul>
+            <{foreach from=$newslist.bannerindex item=filmlistindex }>
+            <li <{if ($filmlistindex==1)}>class="on"<{/if}>><a href="javascript:;"><{$filmlistindex}></a></li>
+            <{/foreach}>
+		</ul>
+	</div>
+</div>
+<!--banner end-->
+	<div class="news_right fr">
+        <{foreach from=$newslist.tj1 item=news}>
+            <h2><a href="<{$news.n_url}>" target="_blank"><{$news.n_title}></a></h2>
+            <p><{$news.n_info}></p>
+        <{/foreach}>
+    	
+		<ul>
+        	<{foreach from=$newslist.tj10 item=news}>
+            <li><a href="<{$news.n_url}>" target="_blank"><{$news.n_title}></a></li>
+            <{/foreach}>
+        </ul>
+    </div>
+    <div class="clear" style="height:20px;"></div>
+    
+    
+    <div class="news" style="width:570px;">
+        <div class="caption" style="margin-top:20px;">
+            <div class="tip">
+                <h3 style="width:100px">二手车行情</h3>
+                <span class="interval"></span>
+                <div class="clear"></div>
+            </div>
+            <div class="more">
+                <a href="<{$weburl}>/index.php?m=newslist&catid=1">更多 &raquo;</a>
+            </div>
+        </div>
+        <div class="content mb20">
+            <div class="new-list">
+                <ul>
+                    <{foreach from=$newslist.eschq item=items}>
+                        <li style="width:550px;" ><a target="_blank" style="width:450px;" href="<{$items.n_url}>" title="<{$items.n_title}>"><{$items.n_title}></a>
+                        <span class="time" style="width:100px;"><{$items.n_addtime}></span>
+                        </li>
+                    <{/foreach}>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="news" style="width:570px;margin-left:30px;">
+        <div class="caption" style="margin-top:20px;">
+            <div class="tip">
+                <h3 style="width:100px">行业资讯</h3>
+                <span class="interval"></span>
+                <div class="clear"></div>
+            </div>
+            <div class="more">
+                <a href="<{$weburl}>/index.php?m=newslist&catid=2">更多 &raquo;</a>
+            </div>
+        </div>
+        <div class="content mb20">
+            <div class="new-list">
+                <ul>
+                    <{foreach from=$newslist.hyzx item=items}>
+                        <li style="width:550px;" ><a target="_blank" style="width:450px;" href="<{$items.n_url}>" title="<{$items.n_title}>"><{$items.n_title}></a>
+                        <span class="time" style="width:100px;"><{$items.n_addtime}></span>
+                        </li>
+                    <{/foreach}>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="clear"></div>
+    
+    <div class="news" style="width:570px;">
+        <div class="caption" style="margin-top:20px;">
+            <div class="tip">
+                <h3 style="width:100px">购车指南</h3>
+                <span class="interval"></span>
+                <div class="clear"></div>
+            </div>
+            <div class="more">
+                <a href="<{$weburl}>/index.php?m=newslist&catid=4">更多 &raquo;</a>
+            </div>
+        </div>
+        <div class="content mb20">
+            <div class="new-list">
+                <ul>
+                    <{foreach from=$newslist.gczn item=items}>
+                        <li style="width:550px;" ><a target="_blank" style="width:450px;" href="<{$items.n_url}>" title="<{$items.n_title}>"><{$items.n_title}></a>
+                        <span class="time" style="width:100px;"><{$items.n_addtime}></span>
+                        </li>
+                    <{/foreach}>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="news" style="width:570px;margin-left:30px;">
+        <div class="caption" style="margin-top:20px;">
+            <div class="tip">
+                <h3 style="width:100px">汽车养护</h3>
+                <span class="interval"></span>
+                <div class="clear"></div>
+            </div>
+            <div class="more">
+                <a href="<{$weburl}>/index.php?m=newslist&catid=3">更多 &raquo;</a>
+            </div>
+        </div>
+        <div class="content mb20">
+            <div class="new-list">
+                <ul>
+                    <{foreach from=$newslist.qcyh item=items}>
+                        <li style="width:550px;" ><a target="_blank" style="width:450px;" href="<{$items.n_url}>" title="<{$items.n_title}>"><{$items.n_title}></a>
+                        <span class="time" style="width:100px;"><{$items.n_addtime}></span>
+                        </li>
+                    <{/foreach}>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="clear"></div>
+    
+    <div class="caption" style="margin-top:20px;">
+        <div class="tip">
+            <h3 style="width:100px">更多新闻</h3>
+            <span class="interval"></span>
+            <div class="clear"></div>
+        </div>
+        <ul id="news-ul">
+            <li class="on">汽车总类</li>
+            <li>维修检测</li>
+            <li>行业法规</li>
+        </ul>
+        <div class="clear"></div>
+    </div>
+    
+    <div class="center" id="news-content">
+        <div class="news-content-item on">
+            <ul class="news2">
+                <{foreach from=$newslist.qczl item=news}>
+                <li><a href="<{$news.n_url}>" target="_blank"><{$news.n_title}></a></li>
+                <{/foreach}>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div class="news-content-item">
+            <ul class="news2">
+                <{foreach from=$newslist.wxjc item=news}>
+                <li><a href="<{$news.n_url}>" target="_blank"><{$news.n_title}></a></li>
+                <{/foreach}>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div class="news-content-item">
+            <ul class="news2">
+                <{foreach from=$newslist.hyfg item=news}>
+                <li><a href="<{$news.n_url}>" target="_blank"><{$news.n_title}></a></li>
+                <{/foreach}>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+    
+    <div class="clear" style="height:20px;"></div>
+</div>
+<!--xinwenxizun end-->
+
+<!--foot-->
+<{include file="default/`$setting.templates`/foot.html" }>
+<script>
+/*选项卡*/
+$(function(){
+    $("#news-ul li").click(function(){
+        var index = $("#news-ul li").index(this);
+        $(this).addClass("on").siblings("li").removeClass("on");
+        $("#news-content .news-content-item").eq(index).show().siblings().hide();
+    });
+});
+</script>
+</body>
+</html>

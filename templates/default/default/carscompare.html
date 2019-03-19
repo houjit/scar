@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title><{$cars.p_allname}>-<{$setting.title}></title>
+		<meta content="<{$setting.keywords}>" name="keywords" />
+		<meta content="<{$setting.description}>" name="description" />
+		<link href="<{$weburl}>/templates/default/<{$setting.templates}>/css/car.css" rel="stylesheet" type="text/css"/>
+        <link href="static/css/admin/style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="<{$weburl}>/static/js/jquery.js"></script>
+		<script type="text/javascript" src="<{$weburl}>/static/js/layer/layer.min.js"></script>
+		<script type="text/javascript" src="<{$weburl}>/static/js/laydate/laydate.js"></script>
+		<script type="text/javascript" src="<{$weburl}>/static/js/jquery.SuperSlide.2.1.js"></script>
+		<script type="text/javascript" src="<{$weburl}>/static/js/Validform_v5.3.2_min.js"></script>
+        
+
+		</head>
+	<body>
+<!--内容--> 
+<{include file="default/`$setting.templates`/head.html"}>
+<div class="nav">您当前的位置：<a href="<{$weburl}>/">首页</a> <span>></span> <a href="<{$weburl}>/">对比车源</a> <span>></span>  <{foreach from=$carslist item=cars}>
+<{$cars.carname}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <{/foreach}></div>
+<div class="main mt10">
+  <div class="main mt20 clearfix">
+   <table cellspacing="0" cellpadding="0" width="100%"  class="listtable mt10">
+    <tr bgcolor="#FFFFFF" onmouseover="style.backgroundColor='#E2E9EA'"  onmouseout="style.backgroundColor='#ffffff'">	
+    <td align="left"width="200"><div>对比车型</div></td>
+    <{foreach from=$carslist item=cars}> 
+    <td align="center" width="200"><div style="margin-top:15px"><img src="<{$cars.p_mainpic}>"></div><div><font size="2px"><{$cars.carname}></font></div><div><font size="2px" color="#FF0000"><{$cars.tel}></font>&nbsp;&nbsp;&nbsp;<span><font size="2px"><{$cars.username}></font></span></div></td>
+    <{/foreach}>
+	</tr>    
+    <tr><th colspan="4" align="left"><font size="3px">二手车详情</font></th></tr>       
+    <tr bgcolor="#FFFFFF"  onmouseover="style.backgroundColor='#E2E9EA'"  onmouseout="style.backgroundColor='#ffffff'">	
+    <td align="left"width="200">价格</td>
+    <{foreach from=$carslist item=cars}> 
+    <td align="center" width="200"><{$cars.price}></td>
+    <{/foreach}>
+	</tr> 
+    <tr bgcolor="#FFFFFF" onmouseover="style.backgroundColor='#E2E9EA'"  onmouseout="style.backgroundColor='#ffffff'">	
+    <td align="left"width="200">车辆来源</td>
+    <{foreach from=$carslist item=cars}> 
+    <td align="center" width="200"><{$cars.usertype}></td>
+    <{/foreach}>
+	</tr> 
+    <tr bgcolor="#FFFFFF" onmouseover="style.backgroundColor='#E2E9EA'"  onmouseout="style.backgroundColor='#ffffff'">	
+    <td align="left"width="200">发布时间</td>
+    <{foreach from=$carslist item=cars}> 
+    <td align="center" width="200"><{$cars.p_addtime}></td>
+    <{/foreach}>
+	</tr>    
+    <tr bgcolor="#FFFFFF" onmouseover="style.backgroundColor='#E2E9EA'"  onmouseout="style.backgroundColor='#ffffff'">	
+    <td align="left"width="200">牌照地点</td>
+    <{foreach from=$carslist item=cars}> 
+    <td align="center" width="200"><{$cars.city}></td>
+    <{/foreach}>
+	</tr>   
+    <tr bgcolor="#FFFFFF" onmouseover="style.backgroundColor='#E2E9EA'"  onmouseout="style.backgroundColor='#ffffff'">	
+    <td align="left"width="200">首次上牌时间</td>
+    <{foreach from=$carslist item=cars}> 
+    <td align="center" width="200"><{$cars.city}></td>
+    <{/foreach}>
+	</tr>   
+    <tr bgcolor="#ffffff" onmouseover="style.backgroundColor='#E2E9EA'"  onmouseout="style.backgroundColor='#ffffff'">	
+    <td align="left"width="200">行驶里程</td>
+    <{foreach from=$carslist item=cars}> 
+    <td align="center" width="200"><{$cars.kilometre}>公里</td>
+    <{/foreach}>
+	</tr>  
+    <tr bgcolor="#ffffff" onmouseover="style.backgroundColor='#E2E9EA'"  onmouseout="style.backgroundColor='#ffffff'">	
+    <td align="left"width="200">车身颜色</td>
+    <{foreach from=$carslist item=cars}> 
+    <td align="center" width="200"><{$cars.color}></td>
+    <{/foreach}>
+	</tr>  
+    <tr bgcolor="#ffffff" onmouseover="style.backgroundColor='#E2E9EA'"  onmouseout="style.backgroundColor='#ffffff'">	
+    <td align="left"width="200">环保标准</td>
+    <{foreach from=$carslist item=cars}> 
+    <td align="center" width="200"><{$cars.emission}></td>
+    <{/foreach}>
+	</tr>      
+	</table>
+</div>
+</div>
+<{include file="default/`$setting.templates`/foot.html" }>
+</body>
+</html>
+

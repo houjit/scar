@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title><{$setting.title}></title>
+		<meta content="<{$setting.keywords}>" name="keywords" />
+		<meta content="<{$setting.description}>" name="description" />
+		<link href="<{$weburl}>/templates/default/<{$setting.templates}>/css/market.css" rel="stylesheet" type="text/css"/>
+		<script type="text/javascript" src="<{$weburl}>/static/js/jquery.js"></script>
+		<script type="text/javascript" src="<{$weburl}>/static/js/jquery.SuperSlide.2.1.js"></script>
+		<script type="text/javascript" src="<{$weburl}>/static/js/Validform_v5.3.2_min.js"></script>
+		<script language="JavaScript">
+			$(function() {
+				//品牌选择
+				$("#brand").change(function(){
+					$.get("<{$weburl}>/index.php?m=ajax&ajax=1", { 
+						bid :  $("#brand").val() 
+					}, function (data, textStatus){
+						   $("#subbrand").html(data); // 把返回的数据添加到页面上
+						}
+					);
+				});
+				
+				$div_li = $("div.tab_title ul li a");
+				$div_li.click(function() {
+					$(this).addClass("current").parent().siblings().children().removeClass("current");
+					var index = $div_li.index(this);
+					$("div.cartab_box > div").eq(index).show().siblings().hide();
+				});
+
+				//表单验证
+				$(".carform").Validform({
+					tiptype:1
+				});
+				//热门车源
+				$("#hotcar").load("<{$weburl}>/index.php?m=ajax&ajax=1&cartype=indexhot");
+			})
+		</script>
+		</head>
+	<body>
+<!--内容--> 
+<{include file="default/`$setting.templates`/head.html"}>
+<div class="focusBox" style="margin:0 auto;margin-top:15px;">
+	<ul class="pic">
+		<{foreach from=$filmlist item=film_list}>
+		<li><a href="<{$film_list.url}>" target="_blank"><img src="<{$film_list.pic}>"/></a></li>
+		<{/foreach}>
+	</ul>
+	<a class="prev" href="javascript:void(0)"></a>
+	<a class="next" href="javascript:void(0)"></a>
+	<ul class="hd">
+		<{foreach from=$filmlist item=film_list}>
+		<li></li>
+		<{/foreach}>
+	</ul>
+</div>
+<script type="text/javascript">
+	jQuery(".focusBox").slide({ mainCell:".pic",effect:"left", autoPlay:true, delayTime:300});
+</script>
+<div class="main mt15 clearfix">
+	<div class="commonbox01">
+		<h3><a href="<{$weburl}>/index.php?m=news&catid=13" class="more pr10 f14" target="_blank">更多</a>往期集市活动</h3>
+		<div>
+			<ul class="picnewslist">
+				<{foreach from=$newslist.1 item=newslist1}>
+				<li>
+					<a href="<{$newslist1.n_url}>" target="_blank"><img src="<{$newslist1.n_pic}>"></a>
+					<p><a href="<{$newslist1.n_url}>" target="_blank"><{$newslist1.shorttitle}></a></p>
+				</li>
+				<{/foreach}>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="main mt15 clearfix">
+	<div class="index_left02">
+		<div class="commonbox01">
+			<h3>购车小贴士</h3>
+			<div class="box">
+				<ul class="picnewslist02 clearfix">
+					<{foreach from=$newslist.2 item=newslist2}>
+					<li>
+						<a href="<{$newslist2.n_url}>" target="_blank"><img src="<{$newslist2.n_pic}>"></a>
+						<p><a href="<{$newslist2.n_url}>" target="_blank"><{$newslist2.shorttitle}></a></p>
+					</li>
+					<{/foreach}>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="index_right02">
+		<div class="commonbox01">
+			<h3>集市活动答疑</h3>
+			<div class="box">
+				<ul class="asklist clearfix">
+					<{foreach from=$asklist item=ask_list}>
+						<li>
+							<div class="ask clearfix"><i></i><strong><a href="<{$ask_list.n_url}>" target="_blank"><{$ask_list.n_title}></a></strong></div>
+							<div class="reply clearfix"><i></i><p><a href="<{$ask_list.n_url}>" target="_blank"><{$ask_list.n_info}></a></p></div>	
+						</li>
+					<{/foreach}>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<{include file="default/`$setting.templates`/foot.html" }>
+</body>
+</html>

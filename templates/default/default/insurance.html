@@ -1,0 +1,257 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>汽车保险-<{$setting.title}></title>
+		<meta content="<{$setting.keywords}>" name="keywords" />
+		<meta content="<{$setting.description}>" name="description" />
+		<link href="<{$weburl}>/templates/default/<{$setting.templates}>/css/car.css" rel="stylesheet" type="text/css"/>
+		<script type="text/javascript" src="<{$weburl}>/static/js/jquery.js"></script>
+		<script language="JavaScript">
+			$(function() {
+				$(".showtel").click(function() {
+					$(this).hide();
+					$(".qiugoutel").show();
+				});
+			})
+		</script>
+		<style type="text/css">
+		.grid-c2 {margin-bottom: 10px;}
+		.col-head {height: 31px;margin-bottom: 10px;}
+		.container {padding: 20px 40px;line-height: 24px;}
+		.col-head .label h2 {font-size: 16px;width: 170px;background-color: #fc5300;letter-spacing: 2px;line-height: 30px;color: #fff;font-weight: 400;text-indent: 10px;}
+		.category h3 {font-size: 16px;line-height: 60px;font-weight: 400;color: #fc5300;}
+		.category .container {border-bottom: 1px solid #e9e9e9;}
+		.category table {width: 100%;margin-bottom: 20px;}
+		.category table td {text-align: left;vertical-align: middle;}
+		.remark p {color: #999;margin-bottom: 30px;}
+		.container {padding: 20px 40px;font-size: 13px;line-height: 24px;color: #444;}
+		.need-datum table, .cooperative table {width: 100%;}
+		
+		/*保险*/
+		#bx_spe {
+			overflow: hidden;
+			margin-bottom: 30px;
+		}
+		
+		#bx_jia {
+			overflow: hidden;			
+			margin-top: 20px;		
+		}
+		
+		.bx_spe {
+			float: left;
+			width: 200px;
+			height: 186px;
+			background: url("/upload/image/20141020/2.png");
+			margin-left: 20px;
+			margin-left: 38px;
+		}
+		
+		.bx_jia {
+			float: left;
+			width: 250px;
+			margin: 20px 17px 0 38px;	
+		}
+		
+		.bx_jia h3 {
+			background: url("/upload/image/20141020/3_11.png");	
+			color: #fff;
+   		 	font-size: 18px;
+    		height: 35px;
+    		line-height: 35px;
+    		margin-bottom: 5px;
+    		text-align: center;
+		}
+		
+		.bx_jia p {
+			height: 145px;
+    		line-height: 20px;
+    		padding: 20px;
+    		text-indent: 25px;
+			background: url("/upload/image/20141020/4_17.png");		
+		}
+
+		.bx_t {
+			height: 60px;
+    		line-height: 70px;
+			color: #FC5300;
+			font-size: 17px;
+			font-weight: bold;
+			text-align: center;
+		}
+
+		.bx_spe ul li {
+			text-align: center;	
+			height: 25px;
+		}
+
+		.bx_ps {
+			padding: 20px;
+			background-color: #F0F0F0;	
+			margin: 0 58px 40px 38px;
+		}
+
+		</style>
+		</head>
+	<body>
+<!--内容--> 
+<{include file="default/`$setting.templates`/head.html"}>
+<div class="main clearfix mt10">
+	<div class="main_left">
+	<div style="background:url(/upload/image/20141020/service_kv1.jpg) no-repeat center 0;height:320px;padding-bottom:10px;"></div>
+                    <div class="grid-c2 intro">
+                        <div class="col-head clearfix">
+                            <div class="grid-c-l label clearfix">
+                                <span class="icon"></span>
+                                <h2 class="title">商业车险</h2>
+                                <span class="split"></span>
+                            </div>
+                            <div class="grid-c-l nav-bar">
+                            </div>
+                        </div>
+                        <div class="container">
+                            <p>您可以选中国平安，太平洋保险，阳光保险等保险公司险种为您的爱车投保。专业的保险团队，快捷的办理效率，贴心的客服茶点服务，让您的爱车上险更快捷，办理过程更舒适!我们将会继续坚守“诚信经营、公平公正”的原则，秉承“环保、时尚、务实”的理念，以人为本，贴心服务，满足消费者多元化需求，开拓进取，再创辉煌!</p>
+                        </div>
+                    </div>
+                    <div class="grid-c2">
+                        <div class="col-head clearfix">
+                            <div class="grid-c-l label clearfix">
+                                <span class="icon"></span>
+                                <h2 class="title">车辆保险种类</h2>
+                                <span class="split"></span>
+                            </div>
+                        </div>
+                        <div class="container list-1">
+                            <p><i></i>车辆保险种类按性质可以分为强制保险与商业险。</p>
+                            <p><i></i>强制保险(交强险)是国家规定强制购买的保险，商业险是非强制购买的保险，车主可以根据自身的情况进行选择性投保。</p>
+                            <p><i></i>车辆保险种类根据保障的责任范围还可以分为基本险和附加险。</p>
+                        </div>
+                        <img src="/upload/image/20141020/1_03.png" style="margin:0 0 20px 118px;"/>
+                        <ul id="bx_spe">
+                          <li class="bx_spe" style="margin-right:88px;">
+                            <h3 class="bx_t">基本保险包括:</h3>
+                            <ul>
+                            	<li>机动车损失险</li>
+                                <li>机动车第三者责任险</li>
+                                <li>机动车车上人员责任险</li>
+                                <li>机动车全车盗抢险</li>
+                            </ul>
+                          </li>
+                        
+                          <li class="bx_spe" style="margin-right:88px;">
+                            <h3 class="bx_t">附加险包括：</h3>
+                            <ul>
+                            	<li>自燃损失险</li>
+                                <li>玻璃单独破碎险</li>
+                                <li>新增设备损失险</li>
+                                <li>车身油漆单独损伤险</li>
+                                <li>涉水损失险</li>
+                            </ul>                     
+                          </li>
+                          
+                          <li class="bx_spe">
+                            <h3 class="bx_t">特约险包括：</h3>
+                            <ul>
+                            	<li>基本险不计免赔特约险</li>
+                                <li>附加险不计免赔特约险</li>
+                                
+                            </ul>   
+                            
+                          </li>
+                        </ul>
+                        <div class="container bx_ps">
+                            <p>备注：基本险包括商业第三者责任保险、车辆损失险、全车盗抢险、车上人员责任险共四个独立的险种，投保人可以选择投保其中部分险种，也可以选择投保全部险种。</p>
+                            <p style="text-indent: 25px;">玻璃单独破碎险、自燃损失险、新增加设备损失险，是车身损失险的附加险，必须先投保车辆损失险后才能投保这几个附加险。车上责任险、无过错责任险、车载货物掉落责任险等，是第三者责任险的附加险，必须先投保第三者责任险后才能投保这几个附加险;投保不计免赔特约险，必须先同时投保车辆损失险和第三者责任险。</p>
+                        </div>
+                    </div>
+                    
+                    <div style="overflow:hidden;">
+                    <div class="grid-c2 need-datum" style="float:left;margin-right:38px">
+                        <div class="col-head clearfix">
+                            <div class="grid-c-l label clearfix">
+                                <span class="icon"></span>
+                                <h2 class="title">投保所需资料</h2>
+                                <span class="split"></span>
+                            </div>
+                            <div class="grid-c-l nav-bar">
+                            </div>
+                        </div>
+                        <div class="container">
+                            <table>
+                                <tbody>
+                                	<tr>
+                                        <td>机动车行驶证</td>
+                                    </tr>
+                                    <tr>
+                                        <!--<fk:img1>-->
+                                        <td><img src="/upload/image/20141020/c1.jpg" alt="机动车证件"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>身份证复印件</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="/upload/image/20141020/id_card.jpg" alt="身份证正面">
+                                            <img src="/upload/image/20141020/id_card_back.jpg" alt="身份证背面">
+                                        </td>
+                                        <!--</fk:img1>-->
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="grid-c2 cooperative" style="float:left">
+                        <div class="col-head clearfix">
+                            <div class="grid-c-l label clearfix">
+                                <span class="icon"></span>
+                                <h2 class="title">合作保险公司</h2>
+                                <span class="split"></span>
+                            </div>
+                            <div class="grid-c-l nav-bar">
+                            </div>
+                        </div>
+                        <div class="container">
+                            <img src="/upload/image/20141020/5_11.png" alt="车险"></a>
+                                        
+                        </div>
+                    </div>
+                    </div>
+                    
+                    <div class="grid-c2">
+                        <div class="col-head clearfix">
+                            <div class="grid-c-l label clearfix">
+                                <span class="icon"></span>
+                                <h2 class="title">车险增值服务</h2>
+                                <span class="split"></span>
+                            </div>
+                            <div class="grid-c-l nav-bar">
+                            </div>
+                        </div>
+                        <ul id="bx_jia">
+                        	<li class="bx_jia">
+                            	<h3>投保优惠</h3>
+                            	<p>二手车网车辆在我司投保商业险，视为团体单位车辆投保，所投保二手车辆车损按照新车购置价投保，免除您的后顾之忧。</p>
+                            </li>
+                        
+                        	<li class="bx_jia">
+                            	<h3>快赔服务</h3>
+                            	<p>为响应保监会关于综合治理理赔难的文件精神，减少因保险责任鉴定模糊产生的纠纷，二手车网在我司投保车辆损失险将享受专项增值服务，10000元以下保险事故当天赔付，定损完成就赔钱；无需客户自己掏腰包修车。</p>
+                        	</li>
+                        	<li class="bx_jia">
+                            	<h3>单方事故</h3>
+                            	<p>在发生未造成人身伤亡和其他物质损失的单方责任事故，本车估损金额在3000元以下的，经保险公司同意，可无需现场查勘。</p>
+                         	</li>
+                        </ul>
+                        
+                    </div>
+                    
+    </div>
+	<div class="main_right">
+		<{include file="default/`$setting.templates`/right.html"}>
+	</div>
+</div>
+<{include file="default/`$setting.templates`/foot.html" }>
+</body>
+</html>

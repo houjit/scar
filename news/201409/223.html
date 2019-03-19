@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>购车二手车注意事项</title>
+<meta content="" name="keywords" />
+<meta content="XXX二手车" name="description" />
+<link href="/templates/default/default/css/page.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="/static/js/jquery.js"></script>
+<script language="JavaScript">
+$(function(){
+	$(".hits").load("/index.php?m=ajax&ajax=1&newshit=1&id=223");
+})
+</script>
+</head>
+<body>
+<!--内容--> 
+<script type="text/javascript" src="/static/js/jquery.inputtext.js"></script>
+<script language="JavaScript">
+$(function(){
+	$("#carcount").load("/index.php?m=ajax&ajax=1&carcount=1");
+	$(".keywords").textRemindAuto();
+		//城市选择
+	$(".topcity").toggle(
+	  function () {
+		$(".topcitylist").show();
+	  },
+	  function () {
+		$(".topcitylist").hide();
+	  }
+	);
+	})
+</script>
+<!--头部-->
+<script language="JavaScript">
+$(function(){
+	$("#login").load("/index.php?m=ajax&ajax=1&login=1");
+})
+</script>
+<div class="top">
+	<div class="top_main clearfix">
+		<div class="top_left">
+			欢迎来到XXX二手车！<span id="login"></span>		</div>
+		<div class="top_right">
+			客服热线：<span class="orange01 fb">010-58480317</span>
+		</div>
+	</div>
+</div><div class="headw">
+	<div class="head">
+		<div class="logo"><a href="/">XXX二手车</a></div>
+		 	<div class="topcity"><script src="/index.php?m=city"></script></div>
+			<div class="topcitylist hide">
+			<ul>
+				<li><a href="/index.php?m=city&cid=0">全国</a></li>
+								<li><a href="/index.php?m=city&cid=2">济南</a></li>
+								<li><a href="/index.php?m=city&cid=3">青岛</a></li>
+								<li><a href="/index.php?m=city&cid=4">烟台</a></li>
+								<li><a href="/index.php?m=city&cid=5">威海</a></li>
+								<li><a href="/index.php?m=city&cid=7">上海市</a></li>
+								<li><a href="/index.php?m=city&cid=9">秦皇岛</a></li>
+								<li><a href="/index.php?m=city&cid=10">石家庄</a></li>
+							</ul>
+			</div>
+					<div class="topsearch">
+			<div class="topsearchbox">
+			<form method="get" action="/index.php">
+				<input type="text" name="k" class="keywords" value="请输入关键词，如宝马"><input type="submit" value="" class="button"/>
+				<input type="hidden" name="m" value="search">
+			</form>
+			</div>
+			<p class="topkeywords"><a href="/index.php?m=search&k=%E5%AE%9D%E9%A9%AC">宝马</a>&nbsp;&nbsp;<a href="/index.php?m=search&k=%E5%A5%94%E9%A9%B0">奔驰</a>&nbsp;&nbsp;</p>
+		</div>
+		<div class="carnum" id="carcount">
+		</div>
+	</div>
+</div>
+<div class="nav_list">
+	<ul class="clearfix">
+				<li>
+		<a href="/index.php" title="首页"  >首页</a>
+		</li>
+				<li>
+		<a href="/index.php?m=search" title="买车"  >买车</a>
+		</li>
+				<li>
+		<a href="/index.php?m=sellcar" title="卖车"  >卖车</a>
+		</li>
+				<li>
+		<a href="/index.php?m=assesscar" title="车价评估"  >车价评估</a>
+		</li>
+				<li>
+		<a href="/join/" title="我要加盟"  >我要加盟</a>
+		</li>
+				<li>
+		<a href="/contact/" title="周末集市"  >周末集市</a>
+		</li>
+			</ul>
+</div>
+<!--头部end --><div class="nav">您当前的位置：<a href="/">首页</a> <span>></span> 购车小贴士</div>
+		<div class="main mt10 clearfix">
+			<div class="main_left">
+				<div class="commonbox02">
+					<h3>购车小贴士</h3>
+					<div class="box">
+						<h2 class="news_title"> 购车二手车注意事项 </h2>
+						<p class="tc mt20">发表时间：2014-09-18 13:07:42 &nbsp;&nbsp;&nbsp;点击：<span class="hits orange01"></span></p>
+						<div class="news_info">  </div>
+					</div>
+				</div>
+				<div class="commonbox02 mt10">
+						<h3>相关新闻</h3>
+						<div class="box">
+							<ul class="about_news_list clearfix">
+																							</ul>
+						</div>
+					</div>
+			</div>
+			<div class="main_right">
+				<script language="JavaScript">
+$(function() {
+	//热门车源
+	$("#hotcar").load("/index.php?m=ajax&ajax=1&cartype=hot");
+})
+</script>
+<div class="commonbox02">
+	<h3>热门车源</h3>
+	<div class="box">
+		<div id="hotcar"></div>
+	</div>
+</div>			</div>
+		</div>
+		<!--版权-->
+<!--底部导航-->
+<div class="footer" id="foot">
+	<div class="footbox">
+		<p class="foottop">
+						<a href="/index.php" title="首页" class="whiteA f14 pl10 pr10">首页</a> | 
+						<a href="/index.php?m=search" title="买车" class="whiteA f14 pl10 pr10">买车</a> | 
+						<a href="/index.php?m=sellcar" title="卖车" class="whiteA f14 pl10 pr10">卖车</a> | 
+						<a href="/index.php?m=assesscar" title="车价评估" class="whiteA f14 pl10 pr10">车价评估</a> | 
+						<a href="/join/" title="我要加盟" class="whiteA f14 pl10 pr10">我要加盟</a> | 
+						<a href="/contact/" title="周末集市" class="whiteA f14 pl10 pr10">周末集市</a> | 
+					</p>
+		<p class="mt10 pl10"> Copyright  2013 XXX二手车 版权所有. XXX二手车</p>
+		<p class="mt10 pl10">  地址：北京市海淀区西三旗上奥世纪中心 &nbsp;&nbsp;&nbsp;咨询电话：<span class="orange01 fb">010-58480317</span></p>
+	</div>
+</div>
+<!-- 版权 结束 --></body>
+</html>

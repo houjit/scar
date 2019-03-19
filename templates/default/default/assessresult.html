@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><{$page.p_title}> - <{$setting.title}></title>
+<meta content="<{$setting.keywords}>"  name="keywords"/>
+<meta content="<{$setting.description}>" name="description"/>
+<link href="<{$weburl}>/templates/default/<{$setting.templates}>/css/assess.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="<{$weburl}>/static/js/jquery.js"></script>
+</head>
+<body>
+<!--内容--> 
+<{include file="default/`$setting.templates`/head.html"}>
+<div class="main mt15">
+	<div class="lay1" id="evalute_result">
+        <div class="car_info">
+            <div class="left">
+				<span title="<{$post.p_allname}>"><{$post.p_allname}></span>
+			</div>
+            <div class="right">
+                <span class="time">上牌年份<strong><{$post.p_year}>年<{$post.p_month}>月</strong></span>
+				<span class="mileage">行驶里程<strong><{$post.p_kilometre}>万公里</strong></span>
+            </div>
+        </div>
+        <div class="eva_info">
+            <div class="logo">
+                <div class="logo_switch">
+                     <div class="hasdata"></div>
+                 </div>  
+            </div>
+            <div class="detail_info">
+                <p class="p1">通过专业估价算法分析，得出以下结果：</p>
+                <p class="p2">预计成交价<span><{$lastprice}></span>万元</p>
+                <div class="note_box">
+                    <p>以上报价是基于该车在<strong class="color-red">正常保养情况</strong>下行驶<strong class="color-red"><{$post.p_kilometre}>万公里</strong>后的车况进行评估，该车况可能与您的实际情况有所偏差，您可在此基础上进行微调。</p>
+                </div>
+            </div>
+            <div class="choose">
+			  <div class="item">
+				<a class="btn" href="#">再次评估</a>
+				<a target="_blank" href="<{$weburl}>/index.php?m=sellcar" class="buy_car">我要卖车</a>
+			  </div>  
+			</div>
+        </div>
+    </div>
+</div>
+<!--版权--> 
+<{include file="default/`$setting.templates`/foot.html"}>
+</body>
+</html>
