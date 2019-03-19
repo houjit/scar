@@ -30,7 +30,7 @@ define('WEB_PATH', implode("/", $PHP_SELF));
 define('CACHE_DIR',WEB_ROOT.'cache/');  //缓存目录
 
 //网站域名
-define('WEB_DOMAIN', "http://www.haoid.cn");
+define('WEB_DOMAIN', "//scar.houapi.com");
 
 // 网站访问路径，相对于域名
 // 包含配置文件

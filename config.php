@@ -9,9 +9,9 @@
  simcms.net保留全部权力，受相关法律和国际公约保护，请勿非法修改、转载、散播，或用于其他赢利行为，并请勿删除版权声明。
 */
 $db_config['DB_HOST'] = 'localhost'; //数据库地址
-$db_config['DB_USER'] = 'haoid'; //mysql帐号
-$db_config['DB_PASS'] = 'haoid.cn'; //mysql密码
-$db_config['DB_NAME'] = 'haoid'; //数据库名称
+$db_config['DB_USER'] = 'scar_houapi_com'; //mysql帐号
+$db_config['DB_PASS'] = 'ZimKk35R7hidXZfP'; //mysql密码
+$db_config['DB_NAME'] = 'scar_houapi_com'; //数据库名称
 $db_config['DB_CHARSET'] = 'utf8';  //数据库编码
 $db_config['DB_ERROR'] = true;
 $db_config['TB_PREFIX'] = 'simcms_';//数据表前缀
